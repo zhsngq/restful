@@ -1,6 +1,5 @@
 package web.restful;
 
-import java.util.List;
 
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.config.Bootstrap;
