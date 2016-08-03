@@ -14,6 +14,7 @@ import org.hibernate.HibernateException;
 import com.yammer.metrics.annotation.Timed;
 
 import web.config.DataSourceFactory;
+import web.entity.UserLoginLog;
 
 @Path("/")
 public class IndexResource {
@@ -21,7 +22,10 @@ public class IndexResource {
 	@GET
     @Produces(value = MediaType.APPLICATION_JSON)
     @Timed
-    public List<User> index() throws HibernateException, Exception {
-		return null;
+    public List<UserLoginLog> index() throws HibernateException, Exception {
+		List<UserLoginLog> res = DataSourceFactory.getSession()
+				.createNativeQuery("select * from user_login_log",UserLoginLog.class)
+				.getResultList();
+		return res;
     }
 }
