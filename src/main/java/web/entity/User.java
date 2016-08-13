@@ -3,37 +3,92 @@ package web.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "USER")
-public class User {
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id") 
-    private Long id;
- 
-    @Column(name = "name") 
+@Table(name = "User")
+public class User implements java.io.Serializable {
+    
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id", unique = true, nullable = false)
+    private Integer userId;
+    
+    @Column(name = "name", nullable = false)
     private String name;
- 
-    @Column(name = "age") 
-    private Long age;
- 
-    public User() {
-    }
- 
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public Long getAge() {
-        return age;
-    }
-    public void setAge(Long age) {
-        this.age = age;
-    }
+    
+    @Column(name = "header", nullable = false)
+    private String header;
+    
+    @Column(name = "email", nullable = false)
+    private String email;
+    
+    @Column(name = "phone", nullable = false)
+    private String phone;
+    
+    @Column(name = "type", nullable = false)
+    private Integer type;
+    
+    @Column(name = "status", nullable = false)
+    private Integer status;
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getHeader() {
+		return header;
+	}
+
+	public void setHeader(String header) {
+		this.header = header;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	
 }
