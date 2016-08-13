@@ -20,6 +20,6 @@ public class TestService extends Service<BlogConfiguration> {
 
     @Override
     public void run(BlogConfiguration configuration, Environment environment) throws Exception {
-    	environment.addResource(new IndexResource());
+    	environment.addResource(new UserResource());
     }
 }
