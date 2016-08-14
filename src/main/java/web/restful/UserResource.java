@@ -26,8 +26,7 @@ public class UserResource {
 		CriteriaQuery<User> criteria = builder.createQuery( User.class );
 		Root<User> root = criteria.from( User.class );
 		criteria.select(root);
-		// criteria.where( builder.equal( root.get( User_.name ), "John Doe" ) );
-		
+		criteria.where( builder.equal( root.get( "name" ), "zhsngq" ) );
 		List<User> res = DataSourceFactory.getSession().createQuery( criteria ).getResultList();
 		
 		return res;
