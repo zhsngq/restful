@@ -18,6 +18,7 @@ import web.entity.UserLoginLog;
 
 @Path("/")
 public class IndexResource {
+	// test
 
 	@GET
     @Produces(value = MediaType.APPLICATION_JSON)
